@@ -40,7 +40,6 @@ function plusImageSlides(n) {
 
 function currentImageSlide(n) {
   showImageSlides(imageSlideIndex = n);
-
 }
 
  function showImageSlides(n) {
@@ -48,12 +47,12 @@ function currentImageSlide(n) {
    var slides = document.getElementsByClassName('image-slide');
    var dots = document.getElementsByClassName('dot');
    if(n > slides.length) { imageSlideIndex =1}
-   if(n<1) {imageSlideIndex = slide.length}
-   for(i=0; i < dots.length; i++) {
+   if(n < 1) {imageSlideIndex = slide.length}
+   for(i = 0; i < dots.length; i++) {
      slides[i].style.display = 'none';
    }
-   for(i=0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(' active', "");
+   for(i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(' active', '');
 
    }
    slides[imageSlideIndex - 1].style.display = 'block';
