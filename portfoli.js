@@ -30,31 +30,47 @@ document.getElementById('toggleBtn').addEventListener('click', menuToggle);
 /*WELCOME AREA */
 
 var imageSlideIndex = 1;
-
 showImageSlides(imageSlideIndex);
 
-function plusImageSlides(n) {
-  showImageSlides(imageSlideIndex += n);
+function imageSlideTimer() {
+  plusImageSlides(1);
+}
 
+var imageTimer = setInterval(imageSlideTimer, 3000);
+
+function plusImageSlides(n) {
+  clearInterval(imageTimer);
+
+  imageTimer = setInterval(imageSlideTimer, 3000);
+
+  showImageSlides(imageSlideIndex += n);
 }
 
 function currentImageSlide(n) {
-  showImageSlides(imageSlideIndex = n);
+  clearInterval(imageTimer);
+  imageTimer = setInterval(imageSlideIndex = n);
+
 }
 
- function showImageSlides(n) {
-   var i;
-   var slides = document.getElementsByClassName('image-slide');
-   var dots = document.getElementsByClassName('dot');
-   if(n > slides.length) { imageSlideIndex =1}
-   if(n < 1) {imageSlideIndex = slide.length}
-   for(i = 0; i < dots.length; i++) {
-     slides[i].style.display = 'none';
-   }
-   for(i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(' active', '');
+function showImageSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName('image-slide');
+  var dots = document.getElementsByClassName('dot');
+  if(n > slide.length) {imageSlideIndex = 1}
+  if( n < 1) {imageSlideIndex = slides.length}
 
-   }
-   slides[imageSlideIndex - 1].style.display = 'block';
-   dots[imageSlideIndex - 1 ].className = 'active';
- }
+  for( i = 0; dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+
+  }
+  slides[imageSlideIndex -1].style.display = 'block';
+  dots[imageSlideIndex -1].className += ' active';
+}
+
+document.getElementById('imagePrev').addEventListener('click', plusImageSlides.bind(null, -1));
+document.getElementById('imageNext').addEventListener('click', plusImageSlides.bind(null, 1));
+
+document.getElementById('firstDot').addEventListener('click', plusImageSlides.bind(null, 1));
+document.getElementById('secondDot').addEventListener('click', plusImageSlides.bind(null, 2));
+document.getElementById('thirdDot').addEventListener('click', plusImageSlides.bind(null, 3));
+document.getElementById('forthDot').addEventListener('click', plusImageSlides.bind(null, 4));
