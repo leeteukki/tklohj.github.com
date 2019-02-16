@@ -423,3 +423,42 @@ section{
   font-size: 16px;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+/*PORTFOLIO AREA*/
+.portfolio-area {
+  height: auto;
+}
+
+.portfolio-area > .fliter > .list {
+  text-align: center;
+}
+
+.portfolio-area > .fliter > .list > .listItem{
+  display: inline-block;
+  font-weight: bold;
+  padding: 0 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.portfolio-area > .fliter > .list > .listItem:hover,
+.portfolio-area > .fliter > .list > .listItem.active {
+  color: royalblue;
+}
+
+.portfolio-area > .container {
+  padding-top: 50px;
+}
+
+.portfolio-area > .container > .filterItem {
+  display: inline-block;
+  width: calc(100% -40px);
+  margin: 20px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .portfolio-area > .container > .filterItem {
+    width: calc(50% - 40px);
+  }
+}
