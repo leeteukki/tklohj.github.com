@@ -116,9 +116,10 @@ function removeClass(element, name) {
 }
 
 document.getElementById('all').addEventListener('click', filterSelection.bind(null, 'all'));
-document.getElementById('uiux').addEventListener('click', filterSelection.bind(null, 'uiux'));
-document.getElementById('java').addEventListener('click', filterSelection.bind(null, 'java'));
-document.getElementById('db').addEventListener('click', filterSelection.bind(null, 'db'));
+document.getElementById('swift').addEventListener('click', filterSelection.bind(null, 'swift'));
+document.getElementById('ml').addEventListener('click', filterSelection.bind(null, 'ml'));
+document.getElementById('edu').addEventListener('click', filterSelection.bind(null, 'edu'));
+document.getElementById('traval').addEventListener('click', filterSelection.bind(null, 'traval'));
 
 function viewPortfolio(event) {
   var polyNode = event.target;
