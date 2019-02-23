@@ -173,7 +173,8 @@ ul {
 
 /* SECTION CONTAINER */
 .section-container {
-	max-width: 1000px;
+	width: 1300px;
+  height: : 300px;
 	margin: 0 auto;
 }
 
@@ -475,12 +476,12 @@ section {
 
 .portfolio-area > .container > .filterItem > .image {
 	position: relative;
-	max-height: 700px;
+	max-height: 500px;
 }
 
 @media (min-width: 992px) {
 	.portfolio-area > .container > .filterItem > .image {
-		height: 300px;
+		height: 500px;
 	}
 }
 
